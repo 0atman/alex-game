@@ -1,0 +1,1 @@
+web: gunicorn alex_game.wsgi:application
