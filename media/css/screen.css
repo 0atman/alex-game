@@ -1,0 +1,40 @@
+/* GENERAL STYLES */
+html {
+    background-color: #000000;
+    color: #ffffff;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+
+/* CARDS */
+
+.card {
+    width: 185px;
+    height: 256px;
+}
+
+.card img {
+    width: 185px;
+    height: 256px;
+}
+
+.flipable .front {
+    display: none;
+}
+
+.flipable .back {
+    display: inline;
+}
+
+.flipable.flipped .front {
+    display: inline;
+}
+
+.flipable.flipped .back {
+    display: none;
+}
+
+.stage img {
+    padding-bottom: 90px;
+}
