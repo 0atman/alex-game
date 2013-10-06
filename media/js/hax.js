@@ -1,5 +1,5 @@
 var hax = new Object();
-hax.server = 'http://alex-game.herokuapp.com/';
+hax.server = 'http://alex-game.herokuapp.com';
 
 //Provides basic templating for strings
 String.prototype.format = function() {
@@ -23,7 +23,7 @@ function loadTemplates(){
 //Makes an ajax request to get all companies and calls generateCompanyDropdown()
 function getCompanyList(){
     $.ajax({
-        url: hax.server+'api/v1/company/?format=jsonp',
+        url: hax.server+'/api/v1/company/?format=jsonp',
         dataType: 'jsonp',
         success: function(data){
                     var rawCompanies = data.objects;
@@ -47,7 +47,7 @@ function reset(){
 //Updates hax.selectedCompany with the specified id
 function getCompany(id){ 
     $.ajax({
-        url: hax.server+'api/v1/company/' + id + '?format=jsonp',
+        url: hax.server+'/api/v1/company/' + id + '?format=jsonp',
         dataType: 'jsonp',
         success: function(data){
                     hax.selectedCompany = data;
@@ -59,7 +59,7 @@ function getCompany(id){
 function renderGrid(){
     var id = $("#companySelect").val();
     $.ajax({
-        url: hax.server+'api/v1/company/' + id + '?format=jsonp',
+        url: hax.server+'/api/v1/company/' + id + '?format=jsonp',
         dataType: 'jsonp',
         success: function(data){
                     $("#wrapper").empty();
