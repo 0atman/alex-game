@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hax</title>
+        <link rel='stylesheet' href='css/screen.css' type='text/css' media='screen' />
+        <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+        <script type='text/javascript' src='js/hax.js'></script>
+        <script>
+            $( document ).ready(function() {
+                loadTemplates();
+                getCompanyList();
+            });
+        </script>
+    </head>
+    <body>
+        <script type="text/template" id="entryPointTemplate">
+            <div class="row" id="{0}">{1}</div>
+        </script>
+
+        <script type="text/template" id="cardFlipTemplate">
+            <a class="card flipable" id="{0}" onclick="flipCard('{1}');">
+                <img class="front" src="{2}" alt="{3}" title="{4}" />
+                <img class="back" src="{5}" alt="{6}" title="{7}" /> 
+            </a>
+            <a class="stage flipable" id="{8}" onclick="flipCard('{9}');">
+                <img class="front" src="images/front.jpg" />
+                <img class="back" src="images/back.jpg" />
+            </a>
+        </script>
+
+        <script type="text/template" id="cardTemplate">
+            <a class="card" id="{0}">
+                <img class="front" src="{1}" alt="{2}" title="{3}" />
+            </a>
+            <a class="stage flipable" id="{4}" onclick="flipCard('{5}');">
+                <img class="front" src="images/front.jpg" />
+                <img class="back" src="images/back.jpg" />
+            </a>
+        </script>
+
+        <div id="wrapper">
+        </div>
+        <button onclick="reset();">Reset</button>
+    </body>
+</html>
