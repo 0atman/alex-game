@@ -5,7 +5,7 @@ class ICE(models.Model):
     name = models.CharField(max_length=200)
     body = models.TextField()
     file = models.FileField(upload_to="uploads/")
-    
+    order = models.IntegerField()
     def __unicode__(self):
         return self.name
 
